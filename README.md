@@ -160,6 +160,10 @@ python setup.py install
 # docker & multi GPU arch
 TORCH_CUDA_ARCH_LIST="ARCH LIST" python  setup.py install
 # e.g. 7.5: RTX 3000; 8.0: a100 More available in: https://developer.nvidia.com/cuda-gpus
+
+# USE conda install mkl==2024.0 if you find this bug:
+# ImportError: /scratch/rqa8sm/gaussian-better-pcd/env/pointcept/lib/python3.8/site-packages/torch/lib/libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent
+# reference: https://github.com/pytorch/pytorch/issues/123097
 TORCH_CUDA_ARCH_LIST="7.5 8.0" python  setup.py install
 cd ../..
 
